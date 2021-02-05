@@ -1,1 +1,10 @@
-<div class="tree-node"><button>+</button><button>-</button> tree node</div>
+<app-file *ngIf="someData.type === 'file'" [name]="someData.name"></app-file>
+
+<ng-container *ngIf="someData.type === 'folder'">
+  <app-folder [name]="someData.name"></app-folder>
+  <app-tree-node
+    *ngFor="let children of someData.children"
+    [someData]="children"
+  >
+  </app-tree-node>
+</ng-container>

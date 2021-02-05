@@ -8,12 +8,8 @@ import { TREE_DATA } from '../../common/data';
 })
 export class TreeNodeComponent implements OnInit {
   @Input() someData: any;
-  private data: any;
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.data = TREE_DATA.tree;
-    console.log('data', this.data);
-  }
+  ngOnInit(): void {}
 }

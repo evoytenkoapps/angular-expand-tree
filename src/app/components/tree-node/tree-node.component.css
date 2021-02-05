@@ -1,4 +1,5 @@
 .tree-node {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin-left: 20px;
 }

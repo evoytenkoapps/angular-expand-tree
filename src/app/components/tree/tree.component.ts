@@ -7,7 +7,7 @@ import { TREE_DATA } from '../../common/data';
   styleUrls: ['./tree.component.css'],
 })
 export class TreeComponent implements OnInit {
-  private data: any;
+  public data: any;
 
   constructor() {}
 
