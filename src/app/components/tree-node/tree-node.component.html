@@ -1,6 +1,9 @@
-<app-file *ngIf="someData.type === 'file'" [name]="someData.name"></app-file>
+<app-file
+  *ngIf="someData.type === fileTypes.FILE"
+  [name]="someData.name"
+></app-file>
 
-<ng-container *ngIf="someData.type === 'folder'">
+<ng-container *ngIf="someData.type === fileTypes.FOLDER">
   <app-folder class="folder" [name]="someData.name"></app-folder>
   <app-tree-node
     class="tree-node"
