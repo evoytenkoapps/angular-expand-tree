@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TreeNodeComponent } from './components/tree-node/tree-node.component';
+import { TreeComponent } from './components/tree/tree.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TreeNodeComponent
+    TreeNodeComponent,
+    TreeComponent
   ],
   imports: [
     BrowserModule
