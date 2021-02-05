@@ -13,7 +13,13 @@ export class TreeNodeComponent implements OnInit {
 
   public fileTypes: any = FileTypes;
 
+  public isShow = false;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  onShow(data: boolean) {
+    this.isShow = data;
+  }
 }

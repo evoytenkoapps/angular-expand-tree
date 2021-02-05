@@ -4,11 +4,17 @@
 ></app-file>
 
 <ng-container *ngIf="someData.type === fileTypes.FOLDER">
-  <app-folder class="folder" [name]="someData.name"></app-folder>
-  <app-tree-node
-    class="tree-node"
-    *ngFor="let children of someData.children"
-    [someData]="children"
-  >
-  </app-tree-node>
+  <app-folder
+    class="folder"
+    [name]="someData.name"
+    (clickChange)="onShow($event)"
+  ></app-folder>
+  <ng-container *ngIf="isShow">
+    <app-tree-node
+      class="tree-node"
+      *ngFor="let children of someData.children"
+      [someData]="children"
+    >
+    </app-tree-node>
+  </ng-container>
 </ng-container>
