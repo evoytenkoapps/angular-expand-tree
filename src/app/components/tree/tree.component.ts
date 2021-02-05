@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TREE_DATA } from '../../common/data';
+import { FolderInfo } from '../../model/fileInfo';
 
 @Component({
   selector: 'app-tree',
@@ -7,7 +8,7 @@ import { TREE_DATA } from '../../common/data';
   styleUrls: ['./tree.component.css'],
 })
 export class TreeComponent implements OnInit {
-  public data: any;
+  public data: FolderInfo[];
 
   constructor() {}
 

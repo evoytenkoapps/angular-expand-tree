@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TREE_DATA } from '../../common/data';
+import { FolderInfo } from '../../model/fileInfo';
 
 @Component({
   selector: 'app-tree-node',
@@ -7,7 +8,7 @@ import { TREE_DATA } from '../../common/data';
   styleUrls: ['./tree-node.component.css'],
 })
 export class TreeNodeComponent implements OnInit {
-  @Input() someData: any;
+  @Input() someData: FolderInfo;
 
   constructor() {}
 
