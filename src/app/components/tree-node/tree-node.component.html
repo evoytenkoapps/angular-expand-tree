@@ -3,6 +3,7 @@
 <ng-container *ngIf="someData.type === 'folder'">
   <app-folder [name]="someData.name"></app-folder>
   <app-tree-node
+    class="tree-node"
     *ngFor="let children of someData.children"
     [someData]="children"
   >
