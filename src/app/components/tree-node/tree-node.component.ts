@@ -11,17 +11,19 @@ import { FileTypes } from '../../common/file-types';
 export class TreeNodeComponent implements OnInit {
   @Input() folderInfo: FolderInfo;
   public fileTypes: any = FileTypes;
-  public isShow = false;
+  public isExpanded = false;
   public isSortDesc = false;
 
   constructor() {}
 
   ngOnInit(): void {
-    this.onSort(this.isSortDesc);
+    if (this.isExpanded) {
+      this.onSort(this.isSortDesc);
+    }
   }
 
-  onShow(data: boolean) {
-    this.isShow = data;
+  onExpand(data: boolean) {
+    this.isExpanded = data;
   }
 
   onSort(data: boolean) {

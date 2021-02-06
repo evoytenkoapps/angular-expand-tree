@@ -1,8 +1,8 @@
 <button
   class="main-button main-button__image"
-  [class.button-plus]="isShow"
-  [class.button-minus]="!isShow"
-  (click)="onShow()"
+  [class.button-plus]="isExpanded"
+  [class.button-minus]="!isExpanded"
+  (click)="onExpand(!isExpanded)"
 ></button
 ><span class="folder-name">{{ folderInfo.name }}</span>
 <span class="folder-name">{{ folderInfo.children.length }}</span>

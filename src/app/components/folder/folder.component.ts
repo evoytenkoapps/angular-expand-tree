@@ -7,7 +7,7 @@ import { FolderInfo } from '../../model/fileInfo';
   styleUrls: ['./folder.component.css'],
 })
 export class FolderComponent implements OnInit {
-  @Input() isShow: boolean;
+  @Input() isExpanded: boolean;
   @Input() isSortDesc: boolean;
   @Input() folderInfo: FolderInfo;
   @Output() showChange: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -17,9 +17,9 @@ export class FolderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public onShow() {
-    this.isShow = !this.isShow;
-    this.showChange.emit(this.isShow);
+  public onExpand(data: boolean) {
+    this.isExpanded = data;
+    this.showChange.emit(this.isExpanded);
   }
 
   public onSort() {

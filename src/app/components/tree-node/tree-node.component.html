@@ -8,12 +8,12 @@
   <app-folder
     class="folder"
     [folderInfo]="folderInfo"
-    [isShow]="isShow"
+    [isExpanded]="isExpanded"
     [isSortDesc]="isSortDesc"
-    (showChange)="onShow($event)"
+    (showChange)="onExpand($event)"
     (sortChange)="onSort($event)"
   ></app-folder>
-  <ng-container *ngIf="isShow">
+  <ng-container *ngIf="isExpanded">
     <app-tree-node
       class="tree-node"
       *ngFor="let children of folderInfo.children"
