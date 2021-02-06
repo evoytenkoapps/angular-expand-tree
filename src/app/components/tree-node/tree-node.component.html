@@ -7,7 +7,7 @@
   <app-folder
     class="folder"
     [name]="someData.name"
-    (clickChange)="onShow($event)"
+    (showChange)="onShow($event)"
   ></app-folder>
   <ng-container *ngIf="isShow">
     <app-tree-node

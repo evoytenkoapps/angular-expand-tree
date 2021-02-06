@@ -6,14 +6,16 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./folder.component.css'],
 })
 export class FolderComponent implements OnInit {
+  @Input() isShow: boolean;
   @Input() name: string;
-  @Output() clickChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() showChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  public onBtnClick(data: boolean) {
-    this.clickChange.emit(data);
+  public onBtnClick() {
+    this.isShow = !this.isShow;
+    this.showChange.emit(this.isShow);
   }
 }
