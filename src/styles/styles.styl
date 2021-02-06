@@ -54,30 +54,18 @@ $font-size--1a = 14px
 $font-size--1e = 16px
 $font-size--1b = 18px
 $font-size--1f = 24px
-
-font-size--1c()
-  font-size: 24px
-
-  +media(full)
-    font-size: 26px
-
-  +media(wide-up)
-    font-size: 30px
-
 $font-size--1c = 30px
 //
 $line-height--a = 14px
 $line-height--1a = 1.334
 $line-height--1b = 1.715
 //
-// project
-$variable-name = 0
-$tool-bar-height = 40px
-
-
+// core
+@import "./core/core"
 // content
-@import './content/tree-node'
-@import "./content/folder"
-@import "./content/main-button"
+@import './content/tree-node/tree-node'
+@import "./content/folder/folder"
+@import "./content/buttons/buttons"
+@import "./content/tree/tree"
 //
 // the correct order: third-party, basement, __elements, other folders

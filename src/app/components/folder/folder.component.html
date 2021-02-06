@@ -1,1 +1,7 @@
-<button class="main-button" (click)="onBtnClick()"></button>{{ name }}
+<button
+  class="main-button"
+  [class.button-plus]="isShow"
+  [class.button-minus]="!isShow"
+  (click)="onBtnClick()"
+></button
+><span class="folder-name">{{ name }}</span>
