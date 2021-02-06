@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TREE_DATA } from '../../common/data';
-import { FolderInfo } from '../../model/fileInfo';
+import { FolderInfo } from '../../model/file-info';
 
 @Component({
   selector: 'app-tree',

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FolderInfo } from '../../model/fileInfo';
+import { FolderInfo } from '../../model/file-info';
 
 @Component({
   selector: 'app-folder',

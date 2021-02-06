@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TREE_DATA } from '../../common/data';
-import { FileInfo, FolderInfo } from '../../model/fileInfo';
+import { FileInfo, FolderInfo } from '../../model/file-info';
 import { FileTypes } from '../../common/file-types';
 
 @Component({
