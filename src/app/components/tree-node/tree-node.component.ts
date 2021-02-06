@@ -22,12 +22,16 @@ export class TreeNodeComponent implements OnInit {
     }
   }
 
-  onExpand(data: boolean) {
-    this.isExpanded = data;
+  onExpand(isExpanded: boolean) {
+    this.isExpanded = isExpanded;
   }
 
-  onSort(data: boolean) {
-    this.folderInfo.children.sort((a, b) => {
+  onSort(isDesc: boolean) {
+    this.folderInfo.children.sort(this.sorting(isDesc));
+  }
+
+  private sorting(isDesc: boolean) {
+    return (a: FolderInfo | FileInfo, b: FolderInfo | FileInfo) => {
       const bandA = a.name.toLowerCase();
       const bandB = b.name.toLowerCase();
       let compare = 0;
@@ -37,7 +41,7 @@ export class TreeNodeComponent implements OnInit {
       if (bandA > bandB) {
         compare = 1;
       }
-      return data ? compare * -1 : compare;
-    });
+      return isDesc ? compare * -1 : compare;
+    };
   }
 }
