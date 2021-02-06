@@ -1,7 +1,8 @@
 <button
-  class="main-button"
+  class="main-button main-button__image"
   [class.button-plus]="isShow"
   [class.button-minus]="!isShow"
   (click)="onBtnClick()"
 ></button
-><span class="folder-name">{{ name }}</span>
+><span class="folder-name">{{ folderInfo.name }}</span>
+<span class="folder-name">{{ folderInfo.children.length }}</span>

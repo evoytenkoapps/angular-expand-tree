@@ -1,20 +1,20 @@
 <app-file
   class="file-name"
-  *ngIf="someData.type === fileTypes.FILE"
-  [name]="someData.name"
+  *ngIf="folderInfo.type === fileTypes.FILE"
+  [name]="folderInfo.name"
 ></app-file>
 
-<ng-container *ngIf="someData.type === fileTypes.FOLDER">
+<ng-container *ngIf="folderInfo.type === fileTypes.FOLDER">
   <app-folder
     class="folder"
-    [name]="someData.name"
+    [folderInfo]="folderInfo"
     (showChange)="onShow($event)"
   ></app-folder>
   <ng-container *ngIf="isShow">
     <app-tree-node
       class="tree-node"
-      *ngFor="let children of someData.children"
-      [someData]="children"
+      *ngFor="let children of folderInfo.children"
+      [folderInfo]="children"
     >
     </app-tree-node>
   </ng-container>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {FolderInfo} from '../../model/fileInfo';
 
 @Component({
   selector: 'app-folder',
@@ -7,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class FolderComponent implements OnInit {
   @Input() isShow: boolean;
-  @Input() name: string;
+  @Input() folderInfo: FolderInfo;
   @Output() showChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() {}

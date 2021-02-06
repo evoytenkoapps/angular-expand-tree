@@ -9,7 +9,7 @@ import { FileTypes } from '../../common/file-types';
   styleUrls: ['./tree-node.component.css'],
 })
 export class TreeNodeComponent implements OnInit {
-  @Input() someData: FolderInfo;
+  @Input() folderInfo: FolderInfo;
 
   public fileTypes: any = FileTypes;
 
