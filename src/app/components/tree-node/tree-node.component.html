@@ -8,7 +8,10 @@
   <app-folder
     class="folder"
     [folderInfo]="folderInfo"
+    [isShow]="isShow"
+    [isSortDesc]="isSortDesc"
     (showChange)="onShow($event)"
+    (sortChange)="onSort($event)"
   ></app-folder>
   <ng-container *ngIf="isShow">
     <app-tree-node

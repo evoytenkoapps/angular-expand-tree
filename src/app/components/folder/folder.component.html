@@ -2,7 +2,13 @@
   class="main-button main-button__image"
   [class.button-plus]="isShow"
   [class.button-minus]="!isShow"
-  (click)="onBtnClick()"
+  (click)="onShow()"
 ></button
 ><span class="folder-name">{{ folderInfo.name }}</span>
 <span class="folder-name">{{ folderInfo.children.length }}</span>
+<button
+  class="main-button main-button__image"
+  [class.button-up]="isSortDesc"
+  [class.button-down]="!isSortDesc"
+  (click)="onSort()"
+></button>

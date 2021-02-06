@@ -66,6 +66,16 @@ button {
   background-image: url("/assets/icons/remove-24px.svg");
   border-radius: 50%;
 }
+.button-up {
+  width: 16px;
+  height: 16px;
+  background-image: url("/assets/icons/keyboard_arrow_up-24px.svg");
+}
+.button-down {
+  width: 16px;
+  height: 16px;
+  background-image: url("/assets/icons/keyboard_arrow_down-24px.svg");
+}
 .tree-base {
   display: block;
   margin-top: 8px;
