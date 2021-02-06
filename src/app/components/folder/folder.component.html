@@ -4,10 +4,12 @@
   [class.button-minus]="!isExpanded"
   (click)="onExpand(!isExpanded)"
 ></button
-><span class="folder-name">{{ folderInfo.name }}</span>
-<span class="folder-name">{{ folderInfo.children.length }}</span>
+><span class="folder-name">{{
+  folderInfo.name + ": " + folderInfo.children.length
+}}</span>
 <button
   class="main-button main-button__image"
+  *ngIf="isExpanded"
   [class.button-up]="isSortDesc"
   [class.button-down]="!isSortDesc"
   (click)="onSort()"
