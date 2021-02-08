@@ -3,8 +3,6 @@ export interface FileInfo {
   type: string;
 }
 
-export interface FolderInfo {
-  name: string;
-  type: string;
+export interface FolderInfo extends FileInfo {
   children: FolderInfo[] | FileInfo[];
 }

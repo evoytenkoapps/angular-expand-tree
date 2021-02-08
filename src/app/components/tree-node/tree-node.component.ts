@@ -17,9 +17,7 @@ export class TreeNodeComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    if (this.isExpanded) {
-      this.onSort(this.isSortDesc);
-    }
+    this.onSort(this.isSortDesc);
   }
 
   onExpand(isExpanded: boolean) {
@@ -27,20 +25,17 @@ export class TreeNodeComponent implements OnInit {
   }
 
   onSort(isDesc: boolean) {
-    this.folderInfo.children.sort(this.sorting(isDesc));
+    if (this.folderInfo.type === FileTypes.FOLDER) {
+      const folders = this.folderInfo.children
+        .filter((info) => info.type === FileTypes.FOLDER)
+        .sort(this.sorting(isDesc));
 
-    // const folders = this.folderInfo.children.filter(
-    //   (info) => info.type === FileTypes.FOLDER
-    // );
-    //
-    // const files = this.folderInfo.children.filter(
-    //   (info) => info.type === FileTypes.FILE
-    // );
-    //
-    // folders.sort(this.sorting(isDesc));
-    // files.sort(this.sorting(isDesc));
-    //
-    // this.folderInfo.children = { ...folders, ...files };
+      const files = this.folderInfo.children
+        .filter((info) => info.type === FileTypes.FILE)
+        .sort(this.sorting(isDesc));
+
+      this.folderInfo.children = [...folders, ...files];
+    }
   }
 
   private sorting(isDesc: boolean) {
