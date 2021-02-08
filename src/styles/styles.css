@@ -38,7 +38,7 @@ button {
   margin-bottom: 8px;
 }
 .folder-name {
-  margin: 0 8px;
+  padding: 0 8px;
 }
 .file-name {
   margin-bottom: 8px;

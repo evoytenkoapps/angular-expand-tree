@@ -1,7 +1,7 @@
 <button
   class="main-button main-button__image"
-  [class.button-plus]="isExpanded"
-  [class.button-minus]="!isExpanded"
+  [class.button-plus]="!isExpanded"
+  [class.button-minus]="isExpanded"
   (click)="onExpand(!isExpanded)"
 ></button
 ><span class="folder-name">{{
