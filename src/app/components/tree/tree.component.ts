@@ -1,24 +1,32 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { TREE_DATA } from '../../common/data';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FolderInfo } from '../../model/file-info';
 import { HttpService } from '../../service/http.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tree',
   templateUrl: './tree.component.html',
   styleUrls: ['./tree.component.css'],
 })
-export class TreeComponent implements OnInit {
+export class TreeComponent implements OnInit, OnDestroy {
+  private componentDestroyed: Subject<any> = new Subject();
   public data: FolderInfo[];
 
   constructor(private httpService: HttpService) {}
 
   ngOnInit(): void {
-    this.data = TREE_DATA.tree;
-    console.log('data', this.data);
-
     this.httpService
       .getFiles()
-      .subscribe((data) => console.log('getFiles', data));
+      .pipe(takeUntil(this.componentDestroyed))
+      .subscribe((data) => {
+        console.log('gotFiles', data);
+        this.data = data.tree;
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.componentDestroyed.next();
+    this.componentDestroyed.complete();
   }
 }

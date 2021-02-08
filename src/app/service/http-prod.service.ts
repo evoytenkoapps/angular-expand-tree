@@ -6,6 +6,6 @@ export class HttpProdService extends HttpService {
     super();
   }
   getFiles() {
-    return this.httpClient.get('/assets/data.json');
+    return this.httpClient.get('/assets/data/data.json');
   }
 }
