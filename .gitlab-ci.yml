@@ -1,0 +1,31 @@
+variables:
+  CLI_VERSION: 9.1.13
+  FILE_NAME: "build.zip"
+  PATH_TO_FILE: "/usr/share/nginx/angular-ci-test/"
+  API_TOKEN: "vkFL3noXRmM_ZseDzRfC"
+
+stages:
+  - test
+  - build
+
+test:
+  stage: test
+  image: trion/ng-cli:${CLI_VERSION}
+  before_script:
+    - npm ci
+  script:
+    - ng lint
+
+build-prod:
+  stage: build
+  only:
+    - master
+  image: trion/ng-cli:${CLI_VERSION}
+  before_script:
+    - npm ci
+  script:
+    - npm run build-prod
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - dist/
