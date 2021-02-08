@@ -1,7 +1,7 @@
 import { HttpService } from './http.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { FilesData } from '../common/file-types';
+import { FilesData } from '../model/file-types';
 
 export class HttpProdService extends HttpService {
   constructor(private httpClient: HttpClient) {

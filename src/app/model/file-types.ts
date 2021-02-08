@@ -1,4 +1,4 @@
-import { FolderInfo } from '../model/file-info';
+import { FolderInfo } from './file-info';
 
 export enum FileTypes {
   FILE = 'file',
